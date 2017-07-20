@@ -116,8 +116,9 @@
         	}
 
         </style>
-
-        <script src=""
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.10/handlebars.js"></script>
+        <script src="js/rotatehelper.js"></script>
+        <script src="js/jsonhelper.js"></script>
         <script src="js/main.js"></script>
 
     </head>
@@ -199,17 +200,13 @@
                 </div>
             </div>
 
-            <div class="rotate_holder">
-
+            <div class="rotate_holder main">
 
                 <div class="view_window">
 
                   <div class="waiting_list">
 
-
                   </div>
-
-
 
                 </div>
 
@@ -222,62 +219,76 @@
 
             </div>
 
+            <div class="rotate_holder course">
+
+
+                <div class="view_window">
+
+                  <div class="waiting_list">
+
+
+                  </div>
+
+                </div>
+
+                <div class="left_button">
+                  <img src="left.png" />
+                </div>
+                <div class="right_button">
+                  <img src="right.png" />
+                </div>
+
+            </div>
+
+            <div class="rotate_holder soup">
+
+                <div class="view_window">
+
+                  <div class="waiting_list">
+
+                  </div>
+
+                </div>
+
+                <div class="left_button">
+                  <img src="left.png" />
+                </div>
+                <div class="right_button">
+                  <img src="right.png" />
+                </div>
+
+            </div>
+
+
+            <div class="rotate_holder side">
+
+                <div class="view_window">
+
+                  <div class="waiting_list">
+
+                  </div>
+
+                </div>
+
+                <div class="left_button">
+                  <img src="left.png" />
+                </div>
+                <div class="right_button">
+                  <img src="right.png" />
+                </div>
+
+            </div>
+
+
+
             <script type="template" id="thumbnail_info">
               <div class="inner_rotate_holder">
-                <img class="inner_rotate_holder_thumbnail" src="https://cdn.bmf.kr/_data/product/201702/14/c181ba751f8a57e4583a8a8bbf607515.jpg"  />
+                <img class="inner_rotate_holder_thumbnail" src="{{image}}"
+                 alt="{{alt}}" />
                 <div class="context">
-                  1
+                  {{title}}
                 </div>
               </div>
-              <div class="inner_rotate_holder">
-                <img class="inner_rotate_holder_thumbnail" src="https://cdn.bmf.kr/_data/product/H2BDC/2f86b4a25087b212615edac616e0f811.jpg"  />
-                <div class="context">
-                  2
-                </div>
-              </div>
-              <div class="inner_rotate_holder">
-                <img class="inner_rotate_holder_thumbnail" src="https://cdn.bmf.kr/_data/product/201702/14/c181ba751f8a57e4583a8a8bbf607515.jpg"  />
-                <div class="context">
-                  3
-                </div>
-              </div>
-              <div class="inner_rotate_holder">
-                <img class="inner_rotate_holder_thumbnail" src="https://cdn.bmf.kr/_data/product/H2BDC/2f86b4a25087b212615edac616e0f811.jpg"  />
-                <div class="context">
-                  4
-                </div>
-              </div>
-              <div class="inner_rotate_holder">
-                <img class="inner_rotate_holder_thumbnail" src="https://cdn.bmf.kr/_data/product/H6DE0/bde4e8be15572f1b30781ed6cc051ed0.jpg"  />
-                <div class="context">
-                  5
-                </div>
-              </div>
-              <div class="inner_rotate_holder">
-                <img class="inner_rotate_holder_thumbnail" src="https://cdn.bmf.kr/_data/product/H2BDC/2f86b4a25087b212615edac616e0f811.jpg"  />
-                <div class="context">
-                  6
-                </div>
-              </div>
-              <div class="inner_rotate_holder">
-                <img class="inner_rotate_holder_thumbnail" src="https://cdn.bmf.kr/_data/product/201702/14/c181ba751f8a57e4583a8a8bbf607515.jpg"  />
-                <div class="context">
-                  7
-                </div>
-              </div>
-              <div class="inner_rotate_holder">
-                <img class="inner_rotate_holder_thumbnail" src="https://cdn.bmf.kr/_data/product/H2BDC/2f86b4a25087b212615edac616e0f811.jpg"  />
-                <div class="context">
-                  8
-                </div>
-              </div>
-              <div class="inner_rotate_holder">
-                <img class="inner_rotate_holder_thumbnail" src="https://cdn.bmf.kr/_data/product/H2BDC/2f86b4a25087b212615edac616e0f811.jpg"  />
-                <div class="context">
-                  9
-                </div>
-              </div>
-
             </script>
 
             <link href="css/main.css" rel="stylesheet" type="text/css" />

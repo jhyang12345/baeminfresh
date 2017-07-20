@@ -1,17 +1,11 @@
 
 document.addEventListener("DOMContentLoaded", function(event) {
   console.log("DOM fully loaded and parsed");
-
   var dots = document.querySelectorAll(".slides_pagination a");
-  console.log(dots.length);
-
   var main_slides_lst = document.querySelectorAll(".main_slides_lst li");
-  console.log(main_slides_lst.length);
-
   var slides_pagination = document.querySelector(".slides_pagination");
-
   var slides = main_slides_lst.length;
-
+  // template holder
   var thumbnail_info = document.querySelector("#thumbnail_info");
 
   slides_pagination.addEventListener("click", function(event) {
@@ -63,8 +57,6 @@ document.addEventListener("DOMContentLoaded", function(event) {
   });
 
   var right = document.querySelector(".slides_next");
-
-
   right.addEventListener("click", function(event) {
     var curIndex;
     for(var i = 0; i < main_slides_lst.length; ++i) {
@@ -89,33 +81,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
   }, 2000);
 */
 
-  var waiting_list = document.querySelector(".waiting_list");
-  waiting_list.innerHTML = thumbnail_info.innerHTML;
-  thumbNailList = document.querySelectorAll(".waiting_list .inner_rotate_holder");
-
-  // initializing rightEnd when the number of thumbNailLists are given!!!
-  rightEnd = thumbNailList.length - 1;
-
-  // grabbing the rotate_holder to make visible after initial widths are calculated
-  var rotate_holder = document.querySelector(".rotate_holder");
-
-  // grabbing the view_window to choose its width
-  var view_window = document.querySelector(".view_window");
-
-  // getting the computed style width of a single inner_holder
-  var inner_holder = document.querySelector(".inner_rotate_holder");
-  var style = window.getComputedStyle(inner_holder, null);
-  var pxIndex = style.width.indexOf("px");
-  var itemWidth = parseFloat(style.width.substr(0, style.width.length-2));
-
-  view_window.style.width = (itemWidth * 4) + "px";
-
-  rotate_holder.style.visibility = "visible";
-
-  waitingListLeft = - (itemWidth * 3);
-  waiting_list.style.marginLeft = waitingListLeft + "px";
-
-
+  /*
   var leftRotate = document.querySelector(".left_button");
   leftRotate.addEventListener("click", function(event) {
     var curList = document.querySelectorAll(".waiting_list .inner_rotate_holder");
@@ -137,10 +103,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
 
     }
 
-
-
     beforeTransition(waiting_list, -1);
-
 
     sideTransition(waiting_list, waitingListLeft, waitingListLeft - itemWidth * 4, -1);
 
@@ -171,14 +134,11 @@ document.addEventListener("DOMContentLoaded", function(event) {
 
     }
 
+
     waitingListLeft = waitingListLeft - 4 * itemWidth;
     waiting_list.style.marginLeft = waitingListLeft + 'px';
 
     beforeTransition(waiting_list, 1);
-
-
-
-
 
     sideTransition(waiting_list, waitingListLeft, waitingListLeft + itemWidth * 4, 1);
 
@@ -188,7 +148,14 @@ document.addEventListener("DOMContentLoaded", function(event) {
 
   });
 
-});
+  */
+
+  var rotate_holder_classes = ["main", "course", "soup", "side"];
+  for(var i = 0; i < rotate_holder_classes.length; ++i) {
+    var buffer = new SlideTab(rotate_holder_classes[i], tabUrlList[i]);
+  }
+
+}); // end of DOMContentLoaded
 
 function beforeTransition(waiting_list, direction) {
   var count = 0;
@@ -245,7 +212,6 @@ var shower = 0;
 
 let ref;
 
-var rotateIndex = 3;
 var thumbNailList;
 
 var rightEnd;

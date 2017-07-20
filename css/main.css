@@ -24,6 +24,7 @@ ul.main_slides_lst li {
 
 .context {
   font-size: 22px;
+  display: none;
 }
 
 .inner_rotate_holder {

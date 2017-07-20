@@ -11,13 +11,18 @@ var tabUrlEvent = new Event("tabUrlEvent");
 
 var tabUrlObjectList = [];
 
+var tabUrlData = {};
+
 // a javascript helper function that triggers designated dom element when the data is loaded!!!
 function loadTabUrlList(element, url) {
   var oReq = new XMLHttpRequest();
   oReq.addEventListener("load", function() {
     var result = this.responseText;
-    console.log(data);
-    // element.dispatchEvent(tabUrlEvent);
+    var data = JSON.parse(result);
+
+    tabUrlData[String(url)] = data;
+    element.dispatchEvent(tabUrlEvent);
+
   });
   oReq.open("GET", url);
   oReq.send();
