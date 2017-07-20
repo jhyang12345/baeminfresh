@@ -1,0 +1,87 @@
+html {
+
+}
+
+.slides_pagination  li  a:hover {
+  opacity: 1.0 !important;
+  cursor: pointer;
+}
+
+
+ul.main_slides_lst li {
+  background: no-repeat center top;
+}
+
+.rotate_holder {
+  width: 100%;
+
+  margin-top: 30px;
+  visibility: hidden;
+  font-size: 0px;
+  position: relative;
+
+}
+
+.context {
+  font-size: 22px;
+}
+
+.inner_rotate_holder {
+  display: inline-block;
+
+}
+
+.inner_rotate_holder_thumbnail {
+  display: block;
+  width: 215px;
+  height: 215px;
+  border-radius: 50%;
+  margin-left: 15px;
+  margin-right: 15px;
+
+}
+
+
+.view_window {
+  margin-left: auto;
+  margin-right: auto;
+  overflow: hidden;
+  position: relative;
+}
+
+.waiting_list {
+
+
+  padding-left: 0;
+  white-space: nowrap;
+}
+
+.left_button {
+  position: absolute;
+  display: inline-block;
+  top: 70px;
+  left: 0px;
+}
+
+.right_button {
+  position: absolute;
+  display: inline-block;
+  top: 70px;
+  right: 0px;
+}
+
+.left_button:hover {
+  cursor: pointer;
+}
+
+.right_button:hover {
+  cursor: pointer;
+}
+
+.right_button > img {
+  width: 50px;
+}
+
+.left_button > img {
+  width: 50px;
+}
