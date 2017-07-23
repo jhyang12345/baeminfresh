@@ -1,0 +1,31 @@
+@font-face {
+  font-family: 'hanna';
+  src: url("fonts/BMHANNA_11yrs_ttf.ttf") format('truetype');
+
+}
+
+@font-face {
+    font-family:'Nanum';
+    font-weight:400;
+    src: url('fonts/NanumGothic.ttf') format('truetype');
+}
+
+@font-face {
+    font-family:'NanumBold';
+    font-weight:600;
+    src: url('https://cdn.bmf.kr/font/NanumGothicBold.eot');
+    src: url('https://cdn.bmf.kr/font/NanumGothicBold.eot?#iefix') format('embedded-opentype'),
+         url('https://cdn.bmf.kr/font/NanumGothicBold.woff') format('woff'),
+         url('https://cdn.bmf.kr/font/NanumGothicBold.ttf') format('truetype');
+}
+
+@font-face {
+    font-family:'NanumEB';
+    font-weight:900;
+    src: url('fonts/NanumGothicExtraBold.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'Montesserat';
+  src: url('fonts/Montesserat.woff2') format('woff2');
+}

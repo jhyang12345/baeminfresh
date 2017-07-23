@@ -1,0 +1,99 @@
+html {
+  font-size: 0px;
+  margin-top: 0px;
+  margin-bottom: 0px;
+  vertical-align: baseline;
+}
+
+.content {
+  width: 980px;
+  margin: 0 auto;
+  padding-top: 50px;
+}
+
+.product_info {
+  display: block;
+}
+.detail_top_image {
+  float: left;
+  width: 400px;
+  height: 400px;
+  margin-right: -450px;
+}
+
+.top_image {
+  display: inline-block;
+  width: 100%;
+  height: 100%;
+}
+
+.detail_top_right {
+  float: right;
+  width: 530px;
+}
+
+.detail_top_right h1 {
+  font-family: 'NanumEB';
+  font-size: 30px;
+  padding-top: 5px;
+  margin-top: 0px;
+  margin-bottom: 0px;
+  letter-spacing: -1px;
+}
+
+.desc_bt_txt {
+  font-size: 14px;
+  color: #333;
+  line-height: 1.6;
+  padding-top: 10px;
+  -webkit-margin-before: 0em;
+  -webkit-margin-after: 0em;
+  -webkit-margin-start: 0px;
+  -webkit-margin-end: 0px;
+}
+
+.desc_info {
+  font-size: 12px;
+  position: relative;
+  margin: 10px 0 0 0;
+  padding: 0 0 0 75px;
+  line-height: 1.85;
+  overflow: hidden;
+}
+
+.desc_info dt, .desc_info dd {
+  padding: 4px 0 0 0;
+}
+
+.desc_info dt {
+  position: relative;
+    float: left;
+    clear: both;
+    left: -75px;
+    margin-right: -75px;
+    color: #999;
+}
+
+.blind {
+  visibility: hidden;
+}
+
+.desc_price {
+  text-align: right;
+}
+
+.price {
+  font-size: 33px;
+  font-family: Verdana, sans-serif;
+  font-weight: bold;
+}
+
+.unit {
+  font-size: 18px;
+  font-family: Verdana, sans-serif;
+  font-weight: bold;
+}
+
+.image_list {
+  margin-top: 450px;
+}

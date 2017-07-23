@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.10/handlebars.js"></script>
+    <script src="js/jsonhelper.js"></script>
+    <script src="js/detailpage.js"></script>
+    <script src="js/detail.js"></script>
+
+    <link href="css/fonts.css" rel="stylesheet" type="text/css" />
+    <link href="css/detail.css" rel="stylesheet" type="text/css" />
+
+
+  </head>
+
+  <body>
+    <div class="content">
+      <div class="product_info">
+
+      </div>
+
+      <div class="image_list">
+
+      </div>
+    </div>
+
+    <script type="template" class="template_text">
+
+        <div class="detail_top_image">
+          <img class="top_image" src="{{top_image}}" />
+        </div>
+
+        <div class="detail_top_right">
+          <h1 class="desc_product_name">{{title}}</h1>
+          <p class="desc_bt_txt">
+            {{product_description}}
+          </p>
+          <dl class="desc_info">
+            <dt>적립금</dt>
+            <dd>{{point}}</dd>
+            <dt>배송정보</dt>
+            <dd>
+              {{delivery_info}}
+            </dd><dt>배송비</dt>
+            <dd>{{delivery_fee}}</dd>
+            <dt class="blind">가격</dt>
+            <dd class="desc_price">
+                <span class="origin_price"></span>
+                <strong class="price">{{price}}</strong>
+                <span class="unit">원</span>
+            </dd>
+        </dl>
+        </div>
+    </script>
+
+    <script type="template" class="image_template">
+      <img class="image_element" src="{{src}}" />
+    </script>
+
+  </body>
+
+</html>

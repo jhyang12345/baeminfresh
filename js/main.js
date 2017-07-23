@@ -26,9 +26,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
           else {
 
           }
-
         }
-
         if(ref) cancelAnimationFrame(ref);
 
         requestAnimationFrame(fader.bind(window, hideElem, showElem, index));
@@ -81,75 +79,6 @@ document.addEventListener("DOMContentLoaded", function(event) {
   }, 2000);
 */
 
-  /*
-  var leftRotate = document.querySelector(".left_button");
-  leftRotate.addEventListener("click", function(event) {
-    var curList = document.querySelectorAll(".waiting_list .inner_rotate_holder");
-
-    if(curList.length > 12) {
-
-      for(var i = 0; i < 4; ++i) {
-        console.log(curList);
-        curList[0].parentElement.removeChild(curList[0]);
-        console.log("Removed!");
-        curList = document.querySelectorAll(".waiting_list .inner_rotate_holder");
-        waitingListLeft = waitingListLeft + itemWidth;
-        waiting_list.style.marginLeft = waitingListLeft + "px";
-
-        rightEnd++;
-        rightEnd = rightEnd % thumbNailList.length;
-
-      }
-
-    }
-
-    beforeTransition(waiting_list, -1);
-
-    sideTransition(waiting_list, waitingListLeft, waitingListLeft - itemWidth * 4, -1);
-
-    waitingListLeft = waitingListLeft - itemWidth * 4;
-    waiting_list.style.marginLeft = waitingListLeft + "px";
-
-  });
-
-
-  var rightRotate = document.querySelector(".right_button");
-  rightRotate.addEventListener("click", function(event) {
-
-    var curList = document.querySelectorAll(".waiting_list .inner_rotate_holder");
-
-
-    if(curList.length > 12) {
-
-      for(var i = 0; i < 4; ++i) {
-        console.log(curList);
-        curList[curList.length - 1].parentElement.removeChild(curList[curList.length - 1]);
-        console.log("Removed!");
-        curList = document.querySelectorAll(".waiting_list .inner_rotate_holder");
-
-        leftStart = leftStart + thumbNailList.length - 1;
-        leftStart = leftStart % thumbNailList.length;
-
-      }
-
-    }
-
-
-    waitingListLeft = waitingListLeft - 4 * itemWidth;
-    waiting_list.style.marginLeft = waitingListLeft + 'px';
-
-    beforeTransition(waiting_list, 1);
-
-    sideTransition(waiting_list, waitingListLeft, waitingListLeft + itemWidth * 4, 1);
-
-    waitingListLeft = waitingListLeft + itemWidth * 4;
-
-    waiting_list.style.marginLeft = waitingListLeft + "px";
-
-  });
-
-  */
-
   var rotate_holder_classes = ["main", "course", "soup", "side"];
   for(var i = 0; i < rotate_holder_classes.length; ++i) {
     var buffer = new SlideTab(rotate_holder_classes[i], tabUrlList[i]);
@@ -157,54 +86,6 @@ document.addEventListener("DOMContentLoaded", function(event) {
 
 }); // end of DOMContentLoaded
 
-function beforeTransition(waiting_list, direction) {
-  var count = 0;
-  if(direction > 0) { //right use leftStart
-
-    while(count < 4) {
-      rightEnd = rightEnd % thumbNailList.length;
-
-      waiting_list.innerHTML = thumbNailList[rightEnd].outerHTML + waiting_list.innerHTML;
-
-      rightEnd--;
-      rightEnd += thumbNailList.length;
-      count++;
-    }
-  } else { //left use rightEnd
-    while(count < 4) {
-      leftStart = leftStart % thumbNailList.length;
-
-      waiting_list.innerHTML = waiting_list.innerHTML + thumbNailList[leftStart].outerHTML;
-
-      leftStart++;
-      count++;
-    }
-  }
-}
-
-function sideTransition(waiting_list, currentLeft, objective, direction) {
-  var buffer = currentLeft;
-  if(direction < 0) { // left
-    buffer = currentLeft - 30.0;
-    if(buffer  < objective) {
-      buffer = objective;
-
-    }
-
-  } else { // right
-    buffer = currentLeft + 30.0;
-    if(buffer > objective) {
-      buffer = objective;
-
-    }
-  }
-  waiting_list.style.marginLeft = buffer + "px";
-  if(buffer == objective) {
-
-    return;
-  }
-  requestAnimationFrame(sideTransition.bind(window, waiting_list, buffer, objective, direction));
-}
 
 
 var hider = 1.0;
@@ -225,7 +106,6 @@ function fader(hideElem, showElem, index) {
   hideElem.style.zIndex = 0;
 
   showElem.style.display = "block";
-
 
   hideElem.style.display = "none";
   hideElem.style.opacity = hider;

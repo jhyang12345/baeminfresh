@@ -282,13 +282,23 @@
 
 
             <script type="template" id="thumbnail_info">
-              <div class="inner_rotate_holder">
-                <img class="inner_rotate_holder_thumbnail" src="{{image}}"
-                 alt="{{alt}}" />
-                <div class="context">
-                  {{title}}
+              <a class="link_holder" href="./detail.html?title={{uri_title}}?hash_code={{detail_hash}}">
+                <div class="inner_rotate_holder">
+                  <img class="inner_rotate_holder_thumbnail" src="{{image}}"
+                   alt="{{alt}}" />
+                   <div class="context_holder">
+                     <span class="context">
+                       {{title}}
+                     </span>
+                     <span class="description">
+                       {{description}}
+                     </span>
+                    <span class="price">
+                      {{s_price}}
+                    </span>
+                   </div>
                 </div>
-              </div>
+              </a>
             </script>
 
             <link href="css/main.css" rel="stylesheet" type="text/css" />

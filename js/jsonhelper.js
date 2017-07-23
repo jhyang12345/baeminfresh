@@ -19,7 +19,7 @@ function loadTabUrlList(element, url) {
   oReq.addEventListener("load", function() {
     var result = this.responseText;
     var data = JSON.parse(result);
-
+    console.log(data);
     tabUrlData[String(url)] = data;
     element.dispatchEvent(tabUrlEvent);
 
