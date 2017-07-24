@@ -26,7 +26,6 @@ class DetailPage {
         this.image_list.innerHTML += this.imageTemplate({src: this.data.detail_section[i]});
       }
 
-
       console.log(this.data.price);
     }.bind(this));
   }

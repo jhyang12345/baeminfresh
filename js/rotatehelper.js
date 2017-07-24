@@ -4,7 +4,6 @@ class SlideTab {
     this.format = document.querySelector("#thumbnail_info");
     this.parent = document.querySelector("." + name);
     this.url = url;
-    console.log(this.parent);
 
     this.init();
     this.addListeners();
@@ -18,8 +17,6 @@ class SlideTab {
     return template;
 
   }
-
-  // var clone = myArray.slice(0);
 
   init() {
     this.waiting_list = this.parent.querySelector(".waiting_list");
@@ -43,13 +40,15 @@ class SlideTab {
     var template = this.templateMaker();
     this.template = this.templateMaker();
 
+    // dummy element
     this.waiting_list.innerHTML = template({title: "Hi", src: "https://cdn.bmf.kr/_data/product/H2BDC/2f86b4a25087b212615edac616e0f811.jpg"});
 
     this.inner_holder = this.parent.querySelector(".inner_rotate_holder");
     this.style = window.getComputedStyle(this.inner_holder, null);
 
     this.itemWidth = parseFloat(this.style.width.substr(0, this.style.width.length-2)) + parseFloat(this.style.marginLeft) + parseFloat(this.style.marginRight);
-
+    //offset width
+    
     this.view_window.style.width = (this.itemWidth * 4) + "px";
 
     // make rotate_holder visible after initial load
@@ -173,9 +172,6 @@ class SlideTab {
   }
 
   beforeTransition(waiting_list, direction) {
-
-    // console.log(this.item_list);
-    // console.log(this.url);
 
     var items = tabUrlData[this.url];
     console.log(items);

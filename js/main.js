@@ -73,11 +73,11 @@ document.addEventListener("DOMContentLoaded", function(event) {
     makeWhite(newIndex);
   });
 
-  /*
+
   setTimeout(function() {
-    right.click();
-  }, 2000);
-*/
+    startAuto();
+  }, 500);
+
 
   var rotate_holder_classes = ["main", "course", "soup", "side"];
   for(var i = 0; i < rotate_holder_classes.length; ++i) {
@@ -142,7 +142,22 @@ let auto;
 function startAuto(elem) {
   if(auto) clearInterval(auto);
   auto = setInterval(function() {
+    var curIndex;
+    var main_slides_lst = document.querySelectorAll(".main_slides_lst li");
+    for(var i = 0; i < main_slides_lst.length; ++i) {
 
+      if(main_slides_lst[i].style.display != "none") {
+          curIndex = i;
+      }
+
+    }
+    var newIndex;
+    if(curIndex == main_slides_lst.length - 1) newIndex = 0;
+    else newIndex = curIndex + 1;
+
+    requestAnimationFrame(fader.bind(window, main_slides_lst[curIndex], main_slides_lst[newIndex], curIndex));
+    startAuto();
+    makeWhite(newIndex);
   }, 4000);
 
 }
